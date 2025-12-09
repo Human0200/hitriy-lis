@@ -1,0 +1,380 @@
+/* mmenu */
+
+.menu-wrap {
+    background-color: #161b2f;
+    position: fixed;
+    top: 0;
+    /* height: 100%; */
+    width: 35%;
+    height: 105vh;
+    margin-left: -425px;
+    font-size: 1em;
+    font-weight: 700;
+    overflow: auto;
+    transition: 0.3s;
+    z-index: 10;
+    display: none;
+}
+
+.menu-show {
+    margin-left: 0;
+    /* box-shadow: 4px 2px 15px 1px #B9ADAD; */
+}
+
+.menu-sidebar {
+    margin: 50px 0 88px 22px;;
+    position: relative;
+    top: 70px;
+    list-style: none;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+}
+
+.menu-sidebar li {
+    padding: 16px 22px 0;
+}
+
+.menu-sidebar li>a {
+    color: #fff;
+    font-size: 24px;
+    position: relative;
+    font-weight: lighter;
+}
+
+.menu-sidebar li>a::after {
+    content: "";
+    display: block;
+    height: 0.15em;
+    position: absolute;
+    top: 100%;
+    width: 100%;
+    left: 50%;
+    transform: translate(-50%);
+    background-image: linear-gradient(to right, transparent 50.3%, #CDB07B 50.3%);
+    transition: background-position .2s .1s ease-out;
+    background-size: 200% auto;
+}
+
+.menu-sidebar li>a:hover::after {
+    background-position: -100% 0;
+}
+
+.menu-sidebar .menu-item-has-children {
+    position: relative;
+}
+
+.menu-sidebar .menu-item-has-children .sub-menu {
+    display: none;
+}
+
+.sidebar-menu-arrow::after {
+    content: "\f107";
+    font-family: 'FontAwesome';
+    padding: 10px;
+    color: #CDB07B;
+    position: relative;
+}
+
+.sidebar-menu-arrow:hover::after {
+    cursor: pointer;
+    color: #fff;
+}
+
+.sidebar-menu-arrow:active::after {
+    top: 2px;
+}
+
+/*Hamburger Button*/
+
+.toggle-button {
+    transition: .25s;
+    z-index: 15;
+}
+
+.toggle-button:hover {
+    cursor: pointer;
+}
+
+.toggle-button .menu-bar {
+    position: absolute;
+    border-radius: 2px;
+    width: 100%;
+    transition: .5s;
+}
+
+.toggle-button .menu-bar-top {
+    border: 4px solid #e0e0e0;
+    border-bottom: none;
+    top: 0;
+}
+
+.toggle-button .menu-bar-middle {
+    height: 4px;
+    background-color: #e0e0e0;
+    margin-top: 7px;
+    margin-bottom: 7px;
+    top: 4px;
+}
+
+.toggle-button .menu-bar-bottom {
+    border: 4px solid #e0e0e0;
+    border-top: none;
+    top: 22px;
+}
+
+.button-open {
+    /* left: 25px; */
+}
+
+.button-open .menu-bar-top {
+    border-color: #e0e0e0;
+    transform: rotate(45deg) translate(8px, 8px);
+    transition: .5s;
+}
+
+.button-open .menu-bar-middle {
+    background-color: #e0e0e0;
+    transform: translate(-230px);
+    transition: .1s ease-in;
+    opacity: 0;
+}
+
+.button-open .menu-bar-bottom {
+    border-color: #e0e0e0;
+    transform: rotate(-45deg) translate(7px, -7px);
+    transition: .5s;
+}
+
+/* Text Block */
+
+/* .wrapper {
+    width: 40%;
+    margin: 100px auto 0;
+    color: #83828D;
+} */
+
+.wrapper .text {
+    padding: 30px;
+}
+
+.wrapper .text .heading {
+    margin-bottom: 40px;
+    font-size: 2em;
+}
+
+.wrapper .text p {
+    line-height: 1.6em;
+}
+
+.wrapper .text .buttons {
+    margin-top: 40px;
+}
+
+/* Buttons */
+
+.wrapper .buttons .button {
+    display: inline-block;
+    margin-right: 20px;
+    padding: 20px 25px;
+    border-radius: 2em;
+    background-color: #70CE64;
+    color: #fff;
+    font-size: .9em;
+    font-weight: 700;
+    transition: background-color .3s;
+}
+
+.wrapper .buttons .button-secondary {
+    background-color: #FF6746;
+}
+
+.wrapper .buttons .button-primary:hover {
+    background-color: #84D07A;
+}
+
+.wrapper .buttons .button-secondary:hover {
+    background-color: #FF7D60;
+}
+
+/*Active state for the buttons*/
+
+.wrapper .buttons .button-primary:active {
+    background-color: #70CE64;
+}
+
+.wrapper .buttons .button-secondary:active {
+    background-color: #FF6746;
+}
+
+/*Icons*/
+
+.wrapper .buttons .button span {
+    position: relative;
+    display: inline-block;
+    padding-right: 20px;
+}
+
+.wrapper .buttons .button span::after {
+    position: absolute;
+    font-family: "FontAwesome";
+    right: -3px;
+    font-size: 14px;
+    top: 0;
+    transition: top .3s, right .3s;
+}
+
+.wrapper .buttons .button-primary span::after {
+    content: "\f019";
+}
+
+.wrapper .buttons .button-secondary span::after {
+    content: "\f178";
+}
+
+/*Slight icons animation*/
+
+.wrapper .buttons .button-primary:hover span::after {
+    top: 4px;
+}
+
+.wrapper .buttons .button-secondary:hover span::after {
+    right: -6px;
+}
+
+.header-content-mmenu {
+    position: fixed;
+    background: #fff;
+    min-height: 70px;
+    width: 100%;
+    z-index: 15;
+    border-bottom: 1px #ededed solid;
+}
+
+.header-phone-mobile {
+    width: 35%;
+    float: right;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    min-height: 70px;
+}
+
+.panel-heading {
+    margin-top: 5px;
+}
+
+.panel-heading a {
+    background: #363636;
+    color: #ffffff;
+    display: block;
+    padding: 10px 40px 10px 15px;
+    position: relative;
+    transition: 0.3s;
+}
+
+.panel-heading a i {
+    font-size: 16px;
+    width: 30px;
+}
+
+.panel-heading a::after {
+    content: "\f107";
+    font-family: "FontAwesome";
+    position: absolute;
+    right: 15px;
+    transition: 0.3s;
+}
+
+.panel-heading.in a::after {
+    transform: rotate(180deg);
+}
+
+.panel-heading.in a {
+    background: #a4803e;
+    ;
+}
+
+.panel-collapse {
+    display: none;
+    padding-bottom: 20px;
+}
+
+.wrapper-ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+.wrapper-ul.df {
+    justify-content: flex-start;
+}
+
+.wrapper-ul ul {
+    margin-top: 5px;
+    padding-left: 20px;
+    list-style-type: none;
+}
+
+.wrapper-ul li {
+    position: relative;
+}
+
+.wrapper-ul li::before {
+    content: '\f105';
+    font-family: "FontAwesome";
+    position: absolute;
+    left: -13px;
+    top: 0;
+    color: #09afdf;
+    transition: 0.5s;
+}
+
+.wrapper-ul li a {
+    color: #09afdf;
+}
+
+.wrapper-ul li:first-child::before {
+    content: '';
+}
+
+.wrapper-ul li:first-child {
+    color: #333333;
+    font-weight: 500;
+}
+
+.wrapper-ul li a:hover {
+    color: #097ca6;
+}
+
+.wrapper-ul li:hover::before {
+    transform: translateX(4px);
+    color: #097ca6;
+}
+@media only screen and (max-width: 1024px) {
+    .menu-wrap{
+display: block;
+    }
+}
+
+/* @media only screen and (max-width: 480px) {
+    .menu-sidebar {
+        margin-top: 50px;
+        text-align: center;
+    font-size: 24px;
+    }
+    .menu-show {
+            height: 100vh;
+    }
+
+} */
+
+@media only screen and (max-width: 320px) {
+    .menu-show {
+        height: 595px;
+}
+.menu-sidebar {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 24px;
+}
+}
